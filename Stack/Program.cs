@@ -6,7 +6,7 @@ namespace Stack
     {
         static void Main(string[] args)
         {
-            var stack = new Stack();
+            var stack = new Stack<int>();
 
             for (int i = 1; i < 5; i++)
                 stack.Push(i);

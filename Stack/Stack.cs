@@ -1,18 +1,18 @@
 ﻿using System;
-using System.Collections;
+using System.Collections.Generic;
 
 namespace Stack
 {
-    public class Stack
+    public class Stack<T>
     {
-        private readonly ArrayList _stack;
+        private readonly IList<T> _stack;
 
         public Stack()
         {
-            _stack = new ArrayList();
+            _stack = new List<T>();
         }
 
-        public void Push(object obj)
+        public void Push(T obj)
         {
             if (obj == null)
                 throw new InvalidOperationException("Cannot push a null object to the stack!");
@@ -20,7 +20,7 @@ namespace Stack
             _stack.Add(obj);
         }
 
-        public object Pop()
+        public T Pop()
         {
             if (_stack.Count == 0)
                 throw new InvalidOperationException("Stack is empty. Cannot pop from an empty stack!");
